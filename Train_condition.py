@@ -13,7 +13,7 @@ from torchvision import datasets #V
 from torchvision.utils import save_image
 from torch.autograd import Variable #V
 
-from Diffusion import GaussianDiffusionTrainer_cond
+from Diffusion_condition import GaussianDiffusionTrainer_cond
 from Model_condition import UNet
 from datasets_brain import * #V
 
