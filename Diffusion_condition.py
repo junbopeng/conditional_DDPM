@@ -12,7 +12,7 @@ def extract(v, t, x_shape):
     return out.view([t.shape[0]] + [1] * (len(x_shape) - 1))
 
 
-class GaussianDiffusionTrainer(nn.Module):
+class GaussianDiffusionTrainer_cond(nn.Module):
     def __init__(self, model, beta_1, beta_T, T):
         super().__init__()
 
@@ -42,7 +42,7 @@ class GaussianDiffusionTrainer(nn.Module):
         loss = F.mse_loss(self.model(x_t, t), noise, reduction='sum')
         return loss
 
-class GaussianDiffusionSampler(nn.Module):
+class GaussianDiffusionSampler_cond(nn.Module):
     def __init__(self, model, beta_1, beta_T, T):
         super().__init__()
 
